@@ -1,0 +1,9 @@
+## Total Procedure Revenue
+SELECT 
+    SUM("RECAMOUNT") AS "Net Amount"
+FROM 
+    "LTHMS"."OPTCHARGEDETAIL"
+WHERE 
+    "BILLDATE" BETWEEN TO_DATE('2025-02-01', 'YYYY-MM-DD') 
+                     AND TO_DATE('2025-02-28', 'YYYY-MM-DD')  
+    AND  LOWER("RPATTYPE") NOT LIKE '%dhi%';  -- Corrected wildcard usage
